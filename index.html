@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Danny Samuel Mumuh</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom CSS for animations */
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+
+        @keyframes fadeInFromBottom {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fadeInFromBottom 0.8s ease-out forwards;
+        }
+        .animation-delay-500 {
+          animation-delay: 0.5s;
+        }
+        .animation-delay-1000 {
+          animation-delay: 1s;
+        }
+    </style>
+</head>
+<body class="font-inter antialiased bg-gray-900 text-gray-100">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-green-400 text-2xl font-bold">
+                        Portofolio
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <button onclick="scrollToSection('home')" class="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-lg font-medium transition duration-300">Beranda</button>
+                        <button onclick="scrollToSection('about')" class="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-lg font-medium transition duration-300">Tentang</button>
+                        <button onclick="scrollToSection('skills')" class="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-lg font-medium transition duration-300">Keahlian</button>
+                        <!-- Removed Projects button -->
+                        <button onclick="scrollToSection('contact')" class="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-lg font-medium transition duration-300">Kontak</button>
+                    </div>
+                </div>
+                <!-- Mobile menu button - you can add functionality for this -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <!-- You would add JavaScript logic here to toggle this menu -->
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white p-8">
+        <!-- Background circles for aesthetic -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <div class="absolute w-96 h-96 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob top-0 left-0"></div>
+            <div class="absolute w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000 top-0 right-0"></div>
+            <div class="absolute w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 bottom-0 left-0"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto space-y-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight animate-fade-in-up">
+                Halo, saya <span class="text-green-400">Danny Samuel Mumuh</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 animate-fade-in-up animation-delay-500">
+                Seorang <span class="font-semibold text-blue-300">pengembang web dan ahli dalam jaringan</span> yang bersemangat menciptakan pengalaman digital yang menarik dan fungsional.
+            </p>
+            <div class="flex justify-center space-x-6 pt-4 animate-fade-in-up animation-delay-1000">
+                <a
+                    href="#contact"
+                    class="px-8 py-3 bg-green-500 text-white font-bold rounded-full shadow-lg hover:bg-green-600 transform hover:scale-105 transition duration-300 ease-in-out"
+                >
+                    Hubungi Saya
+                </a>
+                <!-- Removed Projects button here as well -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-800 text-white p-8 md:p-16 py-20">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-4xl font-bold mb-6 text-green-400 flex items-center">
+                    <!-- Lucide User Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user mr-3"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Tentang Saya
+                </h2>
+                <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                    Halo! Saya Danny Samuel Mumuh. Saya adalah seorang pemula yang bersemangat untuk belajar dan mengeksplorasi dunia pengembangan web dan jaringan.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Saya sedang aktif mendalami berbagai teknologi dan konsep, serta selalu mencari kesempatan untuk mengaplikasikan ilmu yang saya dapatkan. Saya percaya bahwa dengan dedikasi dan kerja keras, saya dapat terus berkembang dan memberikan kontribusi yang berarti.
+                </p>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <img
+                    src="WhatsApp Image 2025-07-09 at 12.06.17_b9e0fcd9.jpg"
+                    alt="Foto Profil Danny Samuel Mumuh"
+                    class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-green-500 transform hover:scale-105 transition duration-300 ease-in-out"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-gray-900 text-white p-8 md:p-16 py-20">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-12 text-green-400 flex items-center justify-center">
+                <!-- Lucide Code Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code mr-3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Keahlian Saya
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <!-- Skill Item: HTML5 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-blue-500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-16 h-16 mb-4" />
+                    <p class="text-lg font-semibold">HTML5</p>
+                </div>
+                <!-- Skill Item: CSS3 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-blue-500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-16 h-16 mb-4" />
+                    <p class="text-lg font-semibold">CSS3</p>
+                </div>
+                <!-- Skill Item: Java -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-blue-500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-16 h-16 mb-4" />
+                    <p class="text-lg font-semibold">Java</p>
+                </div>
+                <!-- Skill Item: Python -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-blue-500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-16 h-16 mb-4" />
+                    <p class="text-lg font-semibold">Python</p>
+                </div>
+                <!-- Skill Item: Mikrotik -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-blue-500">
+                    <img src="miktrorik.png" alt="Mikrotik" class="w-16 h-16 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/64x64/4B5563/FFFFFF?text=Mikrotik';" />
+                    <p class="text-lg font-semibold">Mikrotik Jaringan</p>
+                </div>
+                <!-- Skill Item: Cisco Packet Tracer -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-blue-500">
+                    <img src="download2.png" alt="Cisco Packet Tracer" class="w-16 h-16 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/64x64/4B5563/FFFFFF?text=Cisco';" />
+                    <p class="text-lg font-semibold">Cisco Packet Tracer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-900 text-white p-8 md:p-16 py-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-12 text-green-400 flex items-center justify-center">
+                <!-- Lucide Mail Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Hubungi Saya
+            </h2>
+            <p class="text-lg text-gray-300 mb-8">
+                Tertarik untuk berkolaborasi atau hanya ingin menyapa? Jangan ragu untuk menghubungi saya melalui saluran di bawah ini.
+            </p>
+            <div class="flex flex-col items-center space-y-6">
+                <a
+                    href="mailto:nama.email@example.com"
+                    class="flex items-center text-xl text-blue-400 hover:text-blue-300 transition duration-300"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    dannymumuh78@gmail.com
+                </a>
+                <a
+                    href="tel:+6281234567890"
+                    class="flex items-center text-xl text-blue-400 hover:text-blue-300 transition duration-300"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2.02 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2H7c.57 0 1.13.2 1.57.57l2.82 2.82c.4.4.42 1.05.02 1.45L9.6 11.4a2.5 2.5 0 0 0 .7 2.91 2.5 2.5 0 0 0 2.91.7l1.98-1.98c.4-.4 1.05-.42 1.45-.02l2.82 2.82c.37.44.57 1 .57 1.57v3"/></svg>
+                    +62 818832027
+                </a>
+                <div class="flex space-x-6 pt-4">
+                    <a
+                        href="https://github.com/dannymumuh7777"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-gray-300 hover:text-white transform hover:scale-110 transition duration-300"
+                        aria-label="GitHub Profile"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1.09 0-3 1.5a9.2 9.2 0 0 0-6 0c-1.91-1.5-3-1.5-3-1.5A4.8 4.8 0 0 0 3 14.5c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-5-2"/><path d="M12 11V7"/></svg>
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/danny-samuel-mumuh-7a151926a/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-gray-300 hover:text-white transform hover:scale-110 transition duration-300"
+                        aria-label="LinkedIn Profile"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <!-- Add more social media icons if desired -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-gray-400 text-center p-6 border-t border-gray-700">
+            <p>&copy; <span id="current-year"></span> Danny Samuel Mumuh. Semua Hak Cipta Dilindungi.</p>
+            <p class="text-sm mt-2">Dibuat dengan ❤️ dan HTML/CSS/JavaScript</p>
+        </footer>
+
+        <script>
+            // JavaScript for smooth scrolling
+            function scrollToSection(id) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Initialize Lucide icons
+            lucide.createIcons();
+        </script>
+    </body>
+</html>
+
+
